@@ -3,8 +3,14 @@
 We hope you find exactly what you're looking for in a place to stay.
 
 <ul>
-  {{#each model as |rental|}}
+  {{#each model.rentals as |rental|}}
     {{rental-tile rental=rental destroyRental="destroyRental"}}
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each model.announcements as |announcement|}}
+    {{general-announcements announcement=announcement}}
   {{/each}}
 </ul>
 
@@ -12,4 +18,3 @@ We hope you find exactly what you're looking for in a place to stay.
 
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
-{{#link-to 'announcements'}}Announcements{{/link-to}}
