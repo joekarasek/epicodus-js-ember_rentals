@@ -26,6 +26,15 @@ export default Ember.Route.extend({
       // console.log(newAnnouncement);
       newAnnouncement.save();
       this.transitionTo('index');
+    },
+    update(rental, params) {
+      Object.keys(params).forEach((key) => {
+        if(params[key] !== undefined) {
+          rental.set(key,params[key]);
+        }
+      });
+      rental.save();
+      this.transitionTo('index');
     }
   }
 });
