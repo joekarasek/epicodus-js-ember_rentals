@@ -2,14 +2,11 @@
 
 We hope you find exactly what you're looking for in a place to stay.
 
-<ul>
-  {{#each model as |rental|}}
-    {{rental-tile rental=rental destroyRental="destroyRental"}}
-  {{/each}}
-</ul>
+{{#each model as |announcement|}}
+  {{general-announcements announcement=announcement}}
+{{/each}}
 
 {{new-rental save="save"}}
 
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
-{{#link-to 'announcements'}}Announcements{{/link-to}}
